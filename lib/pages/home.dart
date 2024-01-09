@@ -117,7 +117,7 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              // margin: const EdgeInsets.only(bottom: 48),
+              margin: const EdgeInsets.only(bottom: 48),
               child: const Text(
                 'Our Reviews',
                 style: TextStyle(
