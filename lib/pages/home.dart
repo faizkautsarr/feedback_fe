@@ -1,4 +1,4 @@
-import 'package:feedback_fe/components/FeedbackCard.dart';
+import 'package:feedback_fe/components/feedback_card.dart';
 import 'package:feedback_fe/models/feedback.dart';
 import 'package:feedback_fe/repositories/feedback.dart';
 import 'package:flutter/material.dart';
@@ -68,7 +68,8 @@ class _HomePageState extends State<HomePage> {
       List<FeedbackModel> feedbacksTemp =
           await FeedbackRepository().getFeedback();
       setState(() {
-        feedbacks = feedbacksTemp;
+        // to make it show from the latest data
+        feedbacks = feedbacksTemp.reversed.toList();
       });
 
       setState(() {
@@ -136,7 +137,13 @@ class _HomePageState extends State<HomePage> {
                         controller: scrollController,
                         itemCount: feedbacks.length,
                         itemBuilder: (context, index) {
-                          return FeedbackCard(feedback: feedbacks[index]);
+                          return FeedbackCard(
+                            feedback: feedbacks[index],
+                            // trigger refresh when back from detail page, to fetch latest data
+                            triggerRefresh: () {
+                              getFeedbacks();
+                            },
+                          );
                         },
                       ),
                     )
