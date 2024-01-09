@@ -72,12 +72,14 @@ class FeedbackCard extends StatelessWidget {
                     gaplessPlayback: true,
                   ),
                 ),
-                Text(
-                  feedback.name,
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.normal,
-                    color: Colors.black,
+                Expanded(
+                  child: Text(
+                    feedback.name,
+                    style: const TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.normal,
+                      color: Colors.black,
+                    ),
                   ),
                 ),
               ],
@@ -95,12 +97,14 @@ class FeedbackCard extends StatelessWidget {
                   gaplessPlayback: true,
                 ),
               ),
-              Text(
-                feedback.petName,
-                style: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.normal,
-                  color: Colors.black,
+              Expanded(
+                child: Text(
+                  feedback.petName,
+                  style: const TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.normal,
+                    color: Colors.black,
+                  ),
                 ),
               ),
             ],

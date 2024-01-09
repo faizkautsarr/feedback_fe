@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
           Text(
             'Submit a review',
             style: TextStyle(
-              fontSize: 16,
+              fontSize: 25,
               fontWeight: FontWeight.bold,
               color: Colors.black,
             ),
@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> {
           Text(
             'Be the first by clicking the\nbutton below!',
             style: TextStyle(
-              fontSize: 16,
+              fontSize: 25,
               fontWeight: FontWeight.normal,
               color: Colors.black, // Set text color
             ),
@@ -88,8 +88,8 @@ class _HomePageState extends State<HomePage> {
         toolbarHeight: 0,
       ),
       floatingActionButton: Container(
-        height: 50,
-        margin: const EdgeInsets.symmetric(horizontal: 24),
+        height: 60,
+        margin: const EdgeInsets.symmetric(horizontal: 26),
         width: MediaQuery.of(context).size.width,
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
@@ -102,7 +102,7 @@ class _HomePageState extends State<HomePage> {
           child: const Text(
             'Submit a review',
             style: TextStyle(
-              fontSize: 16,
+              fontSize: 25,
               fontWeight: FontWeight.normal,
               color: Colors.white, // Set text color
             ),
@@ -112,16 +112,16 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       body: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 24),
+        padding: const EdgeInsets.symmetric(horizontal: 26),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              margin: const EdgeInsets.only(bottom: 32),
+              // margin: const EdgeInsets.only(bottom: 48),
               child: const Text(
                 'Our Reviews',
                 style: TextStyle(
-                  fontSize: 24,
+                  fontSize: 30,
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
                 ),
