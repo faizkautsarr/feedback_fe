@@ -1,16 +1,87 @@
-# feedback_fe
+# Feeback-be (backend repository)
 
-A new Flutter project.
+This service serves as the frontend or client for feedback system. For the backend side we using this repo [feedback-be](https://github.com/faizkautsarr/feedback-be)
 
-## Getting Started
+## Prequisites
 
-This project is a starting point for a Flutter application.
+- Flutter 3.3.1
+- Dart 2.18.0 (DevTools 2.15.0)
+- iOS Simulator (Xcode) or Android Simulator (Android Studio)
 
-A few resources to get you started if this is your first Flutter project:
+## How to run
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+To run this project locally:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Make sure you have already clone this repo
+
+- Go to this repo directory
+
+  ```bash
+  cd {PATH}feedback_fe
+  ```
+
+- open this repo via your code editor (VS Code or Android Studio)
+
+- Make sure you already installed the required flutter and Dart version
+
+- Before install and run this project, we need to make sure that you configured the api endpoint correctly. Go to `lib/repositories/feedback.dart` file and set the baseUrl according to your network IP. This things will make sure that you can integrate locally between your client and server.
+
+  ```bash
+  final String baseUrl = 'http://{YOUR_NETWORK_IP}:7777/api/feedback';
+  ```
+
+- Now you can install the package before run the project
+
+  ```bash
+  flutter pub get
+  ```
+
+- Star your simulator, you can manually star your simulator via Xcode (eg: iPhone 14 plus) or via Android Studio.
+
+- After the installation complete and your simulator is ready, you can run your flutter apps:
+
+  ```bash
+  flutter run -d {DEVICE_ID}
+  ```
+
+  or if you only have 1 active device you can simply run
+
+  ```bash
+  flutter run
+  ```
+
+- Wait for a few minutes, when the apps is ready you can see the homes creen (home page) of the apps in your simulator
+
+  ```bash
+  http://{YOUR_NETWORK_IP}:7777
+
+  ```
+
+## Pages and Feature
+
+### Homepage
+
+![Home Page](https://i.ibb.co/P55stSp/Simulator-Screen-Shot-i-Phone-14-Plus-2024-01-10-at-13-09-07.png)
+![Home Page 2](https://i.ibb.co/FWjVMLf/Simulator-Screen-Shot-i-Phone-14-Plus-2024-01-10-at-13-07-56.png)
+
+- This is the main page, you can see the list of user feedbacks (from get feedback api) and the button to redirect you to the feedback form page.
+- In this page, if you click the feedback item you will redirected to the feedback detail
+
+### Feedback Detail
+
+![Detail Page](https://i.ibb.co/RYychLR/Simulator-Screen-Shot-i-Phone-14-Plus-2024-01-10-at-13-09-47.png)
+
+- This is the feedback detail page that shows to you the detailed feedback data.
+
+### Feedback Form Page
+
+![Form Page](https://i.ibb.co/P5hGh1x/Simulator-Screen-Shot-i-Phone-14-Plus-2024-01-10-at-13-07-52.png)
+
+- This is the feedback form page, in this page you can fill the form that contains rating, name, pet name, comments (option)
+- You can submit the form and there will be handlers for success or error condition.
+
+You can see the demo of the apps in [here](https://drive.google.com/file/d/11ZYchmkVYnkO_il0TgxJ7-a511zJURA5/view?usp=sharing)
+
+## Authors
+
+- [@faizkautsarr](https://www.github.com/faizkautsarr)
