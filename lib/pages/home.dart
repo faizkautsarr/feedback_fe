@@ -103,11 +103,15 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) => const FeedbackFormPage(),
-                ),
-              );
+              Navigator.of(context)
+                  .push(
+                    MaterialPageRoute(
+                      builder: (_) => const FeedbackFormPage(),
+                    ),
+                  )
+                  .then(
+                    (value) => getFeedbacks(),
+                  );
             },
             child: const Text(
               'Submit a review',
