@@ -51,7 +51,7 @@ To run this project locally:
   ```
 
 - Wait for a few minutes, when the apps is ready you can see the home screen (home page) of the apps in your simulator
-  <img src="https://i.ibb.co/FWjVMLf/Simulator-Screen-Shot-i-Phone-14-Plus-2024-01-10-at-13-07-56.pn" alt="home page img" width="300">
+  <img src="https://i.ibb.co/FWjVMLf/Simulator-Screen-Shot-i-Phone-14-Plus-2024-01-10-at-13-07-56.png" alt="home page img" width="300">
 
 ## Pages and Feature
 
