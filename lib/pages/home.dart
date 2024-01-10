@@ -1,5 +1,6 @@
 import 'package:feedback_fe/components/feedback_card.dart';
 import 'package:feedback_fe/models/feedback.dart';
+import 'package:feedback_fe/pages/feedback_form.dart';
 import 'package:feedback_fe/repositories/feedback.dart';
 import 'package:flutter/material.dart';
 
@@ -80,76 +81,85 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        centerTitle: true,
-        elevation: 0,
+    return WillPopScope(
+      onWillPop: () async => false,
+      child: Scaffold(
         backgroundColor: Colors.white,
-        toolbarHeight: 0,
-      ),
-      floatingActionButton: Container(
-        height: 60,
-        margin: const EdgeInsets.symmetric(horizontal: 26),
-        width: MediaQuery.of(context).size.width,
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: const Color(0xFF065C99), // Background color
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10.0), // Border radius
-            ),
-          ),
-          onPressed: () {},
-          child: const Text(
-            'Submit a review',
-            style: TextStyle(
-              fontSize: 25,
-              fontWeight: FontWeight.normal,
-              color: Colors.white, // Set text color
-            ),
-            textAlign: TextAlign.center,
-          ),
+        appBar: AppBar(
+          centerTitle: true,
+          elevation: 0,
+          backgroundColor: Colors.white,
+          toolbarHeight: 0,
         ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      body: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 26),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              margin: const EdgeInsets.only(bottom: 48),
-              child: const Text(
-                'Our Reviews',
-                style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                ),
-                textAlign: TextAlign.center,
+        floatingActionButton: Container(
+          height: 60,
+          margin: const EdgeInsets.symmetric(horizontal: 26),
+          width: MediaQuery.of(context).size.width,
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xFF065C99), // Background color
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0), // Border radius
               ),
             ),
-            Expanded(
-              child: feedbacks.isNotEmpty
-                  ? Container(
-                      margin: const EdgeInsets.only(bottom: 60),
-                      child: ListView.builder(
-                        controller: scrollController,
-                        itemCount: feedbacks.length,
-                        itemBuilder: (context, index) {
-                          return FeedbackCard(
-                            feedback: feedbacks[index],
-                            // trigger refresh when back from detail page, to fetch latest data
-                            triggerRefresh: () {
-                              getFeedbacks();
-                            },
-                          );
-                        },
-                      ),
-                    )
-                  : FeedbackEmpty(),
-            )
-          ],
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) => const FeedbackFormPage(),
+                ),
+              );
+            },
+            child: const Text(
+              'Submit a review',
+              style: TextStyle(
+                fontSize: 25,
+                fontWeight: FontWeight.normal,
+                color: Colors.white, // Set text color
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+        body: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 26),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                margin: const EdgeInsets.only(bottom: 48),
+                child: const Text(
+                  'Our Reviews',
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              Expanded(
+                child: feedbacks.isNotEmpty
+                    ? Container(
+                        margin: const EdgeInsets.only(bottom: 60),
+                        child: ListView.builder(
+                          controller: scrollController,
+                          itemCount: feedbacks.length,
+                          itemBuilder: (context, index) {
+                            return FeedbackCard(
+                              feedback: feedbacks[index],
+                              // trigger refresh when back from detail page, to fetch latest data
+                              triggerRefresh: () {
+                                getFeedbacks();
+                              },
+                            );
+                          },
+                        ),
+                      )
+                    : FeedbackEmpty(),
+              )
+            ],
+          ),
         ),
       ),
     );
