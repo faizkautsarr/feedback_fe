@@ -51,26 +51,27 @@ To run this project locally:
   ```
 
 - Wait for a few minutes, when the apps is ready you can see the home screen (home page) of the apps in your simulator
-  <img src="https://i.ibb.co/FWjVMLf/Simulator-Screen-Shot-i-Phone-14-Plus-2024-01-10-at-13-07-56.png" alt="home page img" width="300">
+
+<img src="https://i.ibb.co/FWjVMLf/Simulator-Screen-Shot-i-Phone-14-Plus-2024-01-10-at-13-07-56.png" alt="home page img" width="300">
 
 ## Pages and Feature
 
 ### Homepage
 
-![Home Page](https://i.ibb.co/P55stSp/Simulator-Screen-Shot-i-Phone-14-Plus-2024-01-10-at-13-09-07.png)
+<img src="https://i.ibb.co/P55stSp/Simulator-Screen-Shot-i-Phone-14-Plus-2024-01-10-at-13-09-07.png" alt="home page-2 img" width="300">
 
 - This is the main page, you can see the list of user feedbacks (from get feedback api) and the button to redirect you to the feedback form page.
 - In this page, if you click the feedback item you will redirected to the feedback detail
 
 ### Feedback Detail
 
-![Detail Page](https://i.ibb.co/RYychLR/Simulator-Screen-Shot-i-Phone-14-Plus-2024-01-10-at-13-09-47.png)
+<img src="https://i.ibb.co/RYychLR/Simulator-Screen-Shot-i-Phone-14-Plus-2024-01-10-at-13-09-47.png" alt="detail page img" width="300">
 
 - This is the feedback detail page that shows to you the detailed feedback data.
 
 ### Feedback Form Page
 
-![Form Page](https://i.ibb.co/P5hGh1x/Simulator-Screen-Shot-i-Phone-14-Plus-2024-01-10-at-13-07-52.png)
+<img src="https://i.ibb.co/P5hGh1x/Simulator-Screen-Shot-i-Phone-14-Plus-2024-01-10-at-13-07-52.png" alt="form page img" width="300">
 
 - This is the feedback form page, in this page you can fill the form that contains rating, name, pet name, comments (option)
 - You can submit the form and there will be handlers for success or error condition.
