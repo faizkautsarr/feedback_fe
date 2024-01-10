@@ -1,4 +1,4 @@
-# Feeback-be (backend repository)
+# Feeback_fe (frontend repository)
 
 This service serves as the frontend or client for feedback system. For the backend side we using this repo [feedback-be](https://github.com/faizkautsarr/feedback-be)
 
@@ -50,19 +50,14 @@ To run this project locally:
   flutter run
   ```
 
-- Wait for a few minutes, when the apps is ready you can see the homes creen (home page) of the apps in your simulator
-
-  ```bash
-  http://{YOUR_NETWORK_IP}:7777
-
-  ```
+- Wait for a few minutes, when the apps is ready you can see the home screen (home page) of the apps in your simulator
+  <img src="https://i.ibb.co/FWjVMLf/Simulator-Screen-Shot-i-Phone-14-Plus-2024-01-10-at-13-07-56.pn" alt="home page img" width="300">
 
 ## Pages and Feature
 
 ### Homepage
 
 ![Home Page](https://i.ibb.co/P55stSp/Simulator-Screen-Shot-i-Phone-14-Plus-2024-01-10-at-13-09-07.png)
-![Home Page 2](https://i.ibb.co/FWjVMLf/Simulator-Screen-Shot-i-Phone-14-Plus-2024-01-10-at-13-07-56.png)
 
 - This is the main page, you can see the list of user feedbacks (from get feedback api) and the button to redirect you to the feedback form page.
 - In this page, if you click the feedback item you will redirected to the feedback detail
@@ -80,7 +75,7 @@ To run this project locally:
 - This is the feedback form page, in this page you can fill the form that contains rating, name, pet name, comments (option)
 - You can submit the form and there will be handlers for success or error condition.
 
-You can see the demo of the apps in [here](https://drive.google.com/file/d/11ZYchmkVYnkO_il0TgxJ7-a511zJURA5/view?usp=sharing)
+You can see the demo of the apps in [here](https://drive.google.com/file/d/1m4fTtHfi6JQG6qywymo6BDrYkAoP4yhp/view?usp=sharing)
 
 ## Authors
 
