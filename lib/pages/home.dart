@@ -66,12 +66,23 @@ class _HomePageState extends State<HomePage> {
         isLoading = true;
       });
 
-      List<FeedbackModel> feedbacksTemp =
-          await FeedbackRepository().getFeedback();
-      setState(() {
-        // to make it show from the latest data
-        feedbacks = feedbacksTemp.reversed.toList();
-      });
+      try {
+        List<FeedbackModel> feedbacksTemp =
+            await FeedbackRepository().getFeedback();
+        setState(() {
+          feedbacks = feedbacksTemp.reversed.toList();
+        });
+      } catch (e) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            backgroundColor: Colors.red,
+            behavior: SnackBarBehavior.floating,
+            content:
+                Text("Error retrieving feedback data. Please try again later."),
+            duration: Duration(seconds: 1),
+          ),
+        );
+      }
 
       setState(() {
         isLoading = false;
