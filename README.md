@@ -24,7 +24,7 @@ To run this project locally:
 
 - Make sure you already installed the required flutter and Dart version
 
-- Before install and run this project, we need to make sure that you configured the api endpoint correctly. Go to `lib/repositories/feedback.dart` file and set the baseUrl according to your network IP. This things will make sure that you can integrate locally between your client and server and don't forget that your client apps and your server apps must connect to the same network.
+- Before install and run this project, we need to make sure that you configured the api endpoint correctly. Go to `lib/repositories/feedback.dart` file and set the baseUrl according to your network IP. This things will make sure that you can integrate locally between your client and server. Don't forget to make sure that your client apps and your server apps must connect to the same network.
 
   ```bash
   final String baseUrl = 'http://{YOUR_NETWORK_IP}:7777/api/feedback';
